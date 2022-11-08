@@ -1,0 +1,11 @@
+CHIP Mux4{
+	IN a[4],b[4],c;
+	OUT out[4];
+
+	PARTS:
+	Mux(a=a[0],b=b[0],c=c,out=out[0]);
+	Mux(a=a[1],b=b[1],c=c,out=out[1]);
+	Mux(a=a[2],b=b[2],c=c,out=out[2]);
+	Mux(a=a[3],b=b[3],c=c,out=out[3]);
+
+}
