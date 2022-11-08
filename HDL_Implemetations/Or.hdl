@@ -1,0 +1,15 @@
+CHIP Or{
+	IN a,b;
+	OUT out;
+
+	PARTS:
+	Not(in=a,out=nota);
+	Not(in=b,out=notb);
+	And(a=nota,b=notb,out=out1);
+	Not(in=out1,out=out);
+		
+
+
+
+
+}
