@@ -1,0 +1,11 @@
+CHIP All1{
+	IN a,b;
+	OUT out;
+
+	PARTS:
+	And(a=1,b=1,out=out);
+
+
+
+
+}
