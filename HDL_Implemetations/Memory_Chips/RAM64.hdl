@@ -1,0 +1,33 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/02/Inc16.hdl
+
+/**
+ * 16-bit incrementer:
+ * out = in + 1 (arithmetic addition)
+ */
+
+CHIP RAM64 {
+    	IN in[16],load,address[6];
+    	OUT out[16];
+
+    	PARTS:
+	
+	DMux8Way(in=load,sel=address[3..5],a=rama,b=ramb,c=ramc,d=ramd,e=rame,f=ramf,g=ramg,h=ramh);
+	
+	RAM8(in=in,load=rama,address=address[0..2],out=outrama);
+	RAM8(in=in,load=ramb,address=address[0..2],out=outramb);
+	RAM8(in=in,load=ramc,address=address[0..2],out=outramc);
+	RAM8(in=in,load=ramd,address=address[0..2],out=outramd);
+	RAM8(in=in,load=rame,address=address[0..2],out=outrame);
+	RAM8(in=in,load=ramf,address=address[0..2],out=outramf);
+	RAM8(in=in,load=ramg,address=address[0..2],out=outramg);
+	RAM8(in=in,load=ramh,address=address[0..2],out=outramh);	
+	Mux8Way16(a=outrama,b=outramb,c=outramc,d=outramd,e=outrame,f=outramf,g=outramg,h=outramh,sel=address[3..5],out=out);
+	 
+
+	
+	
+	
+}
